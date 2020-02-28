@@ -1,0 +1,17 @@
+version: "2"
+services:
+  world:
+    build:
+      context: https://github.com/karmaQ/docker-dontstarvetogether.git#v0.8.1:build
+      args:
+        MODS: 1242093526,1251678700,1284834406,1311366056,1418746242,351325790,376333686,458587300,1518666789,1595631294,1932983865,1951468597,1963882182,350811795,367546858,374550642,375438821,375850593,375859599,403252663,458587300,458940297,462434129,481765222,482313412,501385076,585654889,677265215,728459184,787954095,793677414,798539671,804108151,908268355,909425662,917835066,922966487
+    container_name: karmas_world
+    hostname: karmas_world
+    tty: true
+    stdin_open: true
+    command: dst-server start --update=all
+    env_file: world.env
+    ports:
+      - "10999:10999/udp"
+    volumes:
+      - ./world:/var/lib/dsta/cluster
