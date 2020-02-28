@@ -1,6 +1,8 @@
 FROM dstacademy/steamcmd:0.4
 MAINTAINER DST Academy <support@dst.academy>
 
+ADD sources.list /etc/apt/
+
 # Install dependencies.
 RUN set -x \
 	&& dpkg --add-architecture i386 \

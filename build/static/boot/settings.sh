@@ -8,7 +8,7 @@ file_server="$CLUSTER_PATH/$SHARD_NAME/server.ini"
 validate_option "LANGUAGE" \
 	brazilian bulgarian czech danish dutch english finnish french german \
 	greek hungarian italian japanese korean norwegian polish portuguese \
-	romanian russian schinese spanish swedish tchinese thai turkish ukrainian
+	romanian russian schinese spanish swedish tchinese thai turkish ukrainian zh
 validate_port "SERVER_PORT"
 validate_bool "OFFLINE_ENABLE"
 validate_int "MAX_PLAYERS" 1 64
@@ -76,7 +76,7 @@ else
 		echo "[MISC]"
 		conf "console_enabled" "$CONSOLE_ENABLE"
 		conf "max_snapshots" "$MAX_SNAPSHOTS"
-		conf "language_code" "$LANGUAGE"
+		conf "cluster_language" "$LANGUAGE"
 	fi
 
 	if [[ -n "$SHARD_ENABLE" ]]; then
